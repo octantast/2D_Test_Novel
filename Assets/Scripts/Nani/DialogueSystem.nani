@@ -1,0 +1,127 @@
+# start
+@sfx Ambient loop:true
+@hideAll
+@back NovaWorkplace
+@set location=1
+@char n pos:{posx},{posy}
+n: Hey there, newcomer! Welcome to "Digital Echoes" ship! Remind me, what`s your name?
+@hidePrinter 
+@input name summary:"Enter your name."
+@stop
+n: Of course, {name}! Where is your work tablet? Cynthia was supposed to give it to you.
+n: Talk to her and return to me with the tablet.
+@set questStep=1
+@set "missionText=\"TALK TO CYNTHIA\""
+@set markedRoom=2
+@MapRegulation missionText:{missionText}, markedRoom:{markedRoom}
+@hidePrinter 
+@miniMapOpen
+@stop
+
+# noDialogue
+@char n pos:{posx},{posy}
+n: Still without a tablet?
+@hidePrinter 
+@stop
+
+# startCynthia
+@char c pos:{posx},{posy}
+c: Hello! I know what you came here for. But first...
+c: I can't figure this system out. Take a look.
+@miniMapClose
+@hideChars
+@hidePrinter 
+
+@wait 2
+@set questStep=2
+@goto .gameComplete
+
+# gameComplete
+
+@miniMapOpen
+@char c pos:{posx},{posy}
+c: I think I understand your train of thought. Thank you.
+c: Your tablet is charging in the control room. I haven't set it up yet, so bring it back to me right away.
+@set "missionText=\"FIND THE TABLET\""
+@set markedRoom=0
+@MapRegulation missionText:{missionText}, markedRoom:{markedRoom}
+@hidePrinter 
+@stop
+
+# tabletopTake
+@setObjectActive
+@stop
+
+# tabletopTaken
+@set questStep=3
+@set "missionText=\"RETURN TO CYNTHIA\""
+@set markedRoom=2
+@MapRegulation missionText:{missionText}, markedRoom:{markedRoom}
+@setObjectUnactive
+@stop
+
+# noCynthia
+{name}: Cynthia?
+@hidePrinter 
+@stop
+
+# everyone
+@set missionText=""
+@set markedRoom=-1
+@MapRegulation missionText:{missionText}, markedRoom:{markedRoom}
+@char n pos:{posx},{posy}
+@char c pos:{posxright},{posy}
+c: I see you found it. Let me set it up, I haven't had time yet.
+n: No, Cynthia, you absolutely can't be trusted with anything. Be more careful next time. {Name}, bring the tablet over here.
+@hidePrinter 
+@choice "Give the tablet to Nova" goto:.NovaChosen
+@choice "Give the tablet to Cynthia" goto:.cyntiaChosen
+@choice "Say you'll set it up yourself" goto:.nooneChosen
+@stop
+
+# cyntiaChosen
+@sfx Sound
+@set questStep=4
+@set g_scoreSyn=g_scoreSyn+1
+@set g_scoreNova=g_scoreNova-1
+c: Thank you.
+@goto .afterChoise
+
+# NovaChosen
+@sfx Sound
+@set questStep=4
+@set g_scoreSyn=g_scoreSyn-1
+@set g_scoreNova=g_scoreNova+1
+n: It's good that at least someone obeys on this ship.
+@goto .afterChoise
+
+# nooneChosen
+@sfx Sound
+@set questStep=4
+@set g_scoreSyn=g_scoreSyn-1
+@set g_scoreNova=g_scoreNova-1
+n: Ok.
+@goto .afterChoise
+
+# afterChoise
+@goto LocationManager.globalMap
+
+# nova
+@char n pos:{posx},{posy}
+@if g_scoreNova>0
+n: Can't wait for us to go on our first mission.
+@else
+n: I have to work.
+@endif
+@hidePrinter 
+@stop
+
+# cynthia
+@char c pos:{posx},{posy}
+@if g_scoreSyn>0
+c: Oh, it's you again. Finally, this ship will not be so lonely!
+@else
+c: Oh, it's you again.
+@endif
+@hidePrinter 
+@stop

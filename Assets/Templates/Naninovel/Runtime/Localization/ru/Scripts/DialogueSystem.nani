@@ -1,0 +1,89 @@
+; English <en> to Russian <ru> localization document for `DialogueSystem` naninovel script
+
+# 3b31ff7a
+; n: Hey there, newcomer! Welcome to "Digital Echoes" ship! Remind me, what`s your name?
+n: Привет, новичок! Добро пожаловать на корабль "Цифровое эхо"! Напомни мне, как тебя зовут?
+
+# b6a65b7b
+; @input name summary:"Enter your name."
+@input name summary:"Введите ваше имя."
+
+# d0b0500
+; n: Of course, {name}! Where is your work tablet? Cynthia was supposed to give it to you.
+n: Конечно, {имя}! Где твой рабочий планшет? Синтия должна была отдать его тебе.
+
+# 9704f830
+; n: Talk to her and return to me with the tablet.
+n: Поговори с ней и возвращайся ко мне с планшетом.
+
+# 2d104cc2
+; n: Still without a tablet?
+n: Все еще без планшета?
+
+# 8a66c019
+; c: Hello! I know what you came here for. But first...
+c: Привет! Я знаю, за чем ты пришел сюда. Но сначала...
+
+# 66ee8f28
+; c: I can't figure this system out. Take a look.
+c: Я не могу понять эту систему. Взгляни.
+
+# 88288601
+; c: I think I understand your train of thought. Thank you.
+c: Кажется, я понимаю ход твоих мыслей. Спасибо.
+
+# 1391c86
+; c: Your tablet is charging in the control room. I haven't set it up yet, so bring it back to me right away.
+c: Твой планшет заряжается в диспетчерской. Я еще не настроила его, так что приходи с ним сюда.
+
+# 79514213
+; {name}: Cynthia?
+{name}: Синтия?
+
+# adc4bbaf
+; c: I see you found it. Let me set it up, I haven't had time yet.
+c: Я вижу, ты нашел его. Давай настрою, а то я ещё не успела.
+
+# 6ee871c3
+; n: No, Cynthia, you absolutely can't be trusted with anything. Be more careful next time. {Name}, bring the tablet over here.
+n: Нет, Синтия, тебе абсолютно ничего нельзя доверить. Будьте внимательнее в следующий раз. {Имя}, давай планшет сюда.
+
+# 40a1bd03
+; @choice "Give the tablet to Nova" goto:.NovaChosen
+@choice "Отдать планшет Нове" goto:.NovaChosen
+
+# 254d5214
+; @choice "Give the tablet to Cynthia" goto:.cyntiaChosen
+@choice "Отдать планшет Синтии" goto:.cyntiaChosen
+
+# 61702c61
+; @choice "Say you'll set it up yourself" goto:.nooneChosen
+@choice "Сказать, что сам настроишь" goto:.nooneChosen
+
+# 437e13d
+; c: Thank you.
+c: Спасибо.
+
+# 3965ea4c
+; n: It's good that at least someone obeys on this ship.
+n: Хорошо, что хоть кто-то слушается на этом корабле.
+
+# f67a8f7d
+; n: Ok.
+n: Хорошо.
+
+# d4e4bb58
+; n: Can't wait for us to go on our first mission.
+n: Не могу дождаться, когда мы отправимся на нашу первую миссию.
+
+# 799507cb
+; n: I have to work.
+n: Мне надо работать.
+
+# b3f8ff4a
+; c: Oh, it's you again. Finally, this ship will not be so lonely!
+c: О, это снова ты. Наконец-то этот корабль не будет таким одиноким!
+
+# aeec9581
+; c: Oh, it's you again.
+c: Снова ты.

@@ -1,0 +1,35 @@
+# location1
+@mapClose
+@hideAll
+@back NovaWorkplace
+@set location=1
+@goto LabelController.controller
+@stop
+
+# location2
+@mapClose
+@hideAll
+@back CynthiaRoom
+@set location=2
+@goto LabelController.controller
+@stop
+
+# location3
+@goto .locationOn if:questStep==2
+@stop
+
+
+# globalMap
+@hideAll
+@mapOpen
+@set location=4
+@stop
+
+# locationOn
+@mapClose
+@hideAll
+@back ControlRoom
+@set location=3
+@goto LabelController.controller
+@endif
+@stop

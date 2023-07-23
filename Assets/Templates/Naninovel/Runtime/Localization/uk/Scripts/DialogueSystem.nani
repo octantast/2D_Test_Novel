@@ -1,0 +1,67 @@
+; English <en> to Ukrainian <uk> localization document for `DialogueSystem` naninovel script
+
+# 3b31ff7a
+; n: Hey there, newcomer! Welcome to "Digital Echoes" ship! Remind me, what`s your name?
+
+# b6a65b7b
+; @input name summary:"Enter your name."
+
+# d0b0500
+; n: Of course, {name}! Where is your work tablet? Cynthia was supposed to give it to you.
+
+# 9704f830
+; n: Talk to her and return to me with the tablet.
+
+# 2d104cc2
+; n: Still without a tablet?
+
+# 8a66c019
+; c: Hello! I know what you came here for. But first...
+
+# 66ee8f28
+; c: I can't figure this system out. Take a look.
+
+# 88288601
+; c: I think I understand your train of thought. Thank you.
+
+# 1391c86
+; c: Your tablet is charging in the control room. I haven't set it up yet, so bring it back to me right away.
+
+# 79514213
+; {name}: Cynthia?
+
+# adc4bbaf
+; c: I see you found it. Let me set it up, I haven't had time yet.
+
+# 6ee871c3
+; n: No, Cynthia, you absolutely can't be trusted with anything. Be more careful next time. {Name}, bring the tablet over here.
+
+# 40a1bd03
+; @choice "Give the tablet to Nova" goto:.NovaChosen
+
+# 254d5214
+; @choice "Give the tablet to Cynthia" goto:.cyntiaChosen
+
+# 61702c61
+; @choice "Say you'll set it up yourself" goto:.nooneChosen
+
+# 437e13d
+; c: Thank you.
+
+# 3965ea4c
+; n: It's good that at least someone obeys on this ship.
+
+# f67a8f7d
+; n: Ok.
+
+# d4e4bb58
+; n: Can't wait for us to go on our first mission.
+
+# 799507cb
+; n: I have to work.
+
+# b3f8ff4a
+; c: Oh, it's you again. Finally, this ship will not be so lonely!
+
+# aeec9581
+; c: Oh, it's you again.

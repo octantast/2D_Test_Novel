@@ -1,0 +1,28 @@
+# controller
+
+@if location==0
+@goto DialogueSystem.start if:questStep==0
+@goto LocationManager.globalMap if:questStep!=0
+@stop
+
+@elseif location==1
+@goto DialogueSystem.noDialogue if:questStep<3
+@goto DialogueSystem.everyone if:questStep==3
+@goto DialogueSystem.nova if:questStep==4
+@stop
+
+@elseif location==2
+@goto DialogueSystem.startCynthia if:questStep==1
+@goto DialogueSystem.gameComplete if:questStep==2
+@goto DialogueSystem.noCynthia if:questStep==3
+@goto DialogueSystem.cynthia if:questStep==4
+@stop
+
+@elseif location==3
+@goto DialogueSystem.tabletopTake
+@stop
+
+@else
+@stop
+
+
